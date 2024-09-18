@@ -1,0 +1,56 @@
+﻿@model Klienci
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Dodaj Klienta</h2>
+
+<form asp-action="Create" asp-cotroller="Test" method="post" class="mt-4">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Surname" class="form-label"></label>
+        <input asp-for="Surname" class="form-control" />
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PESEL" class="form-label"></label>
+        <input asp-for="PESEL" type="string" class="form-control" maxlength="11" minlength="11" />
+        <span asp-validation-for="PESEL" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="BirthYear" class="form-label"></label>
+        <input asp-for="BirthYear" class="form-control" readonly />
+        <span asp-validation-for="BirthYear" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Płeć" class="form-label"></label>
+        <input asp-for="Płeć" class="form-control" readonly />
+        <span asp-validation-for="Płeć" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Zapisz</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.querySelector('input[name="PESEL"]').addEventListener('input', function() {
+            const pesel = this.value;
+            if (pesel.length === 11) {
+                const rokUrodzenia = parseInt(pesel.substring(0, 2), 10);
+                const miesiac = parseInt(pesel.substring(2, 4), 10);
+                let finalRok = miesiac > 12 ? rokUrodzenia + 2000 : rokUrodzenia + 1900;
+                const plec = parseInt(pesel[9], 10) % 2 === 0 ? 1 : 2;
+
+                document.querySelector('input[name="BirthYear"]').value = finalRok;
+                document.querySelector('input[name="Płeć"]').value = plec;
+            }
+        });
+    </script>
+}
+
