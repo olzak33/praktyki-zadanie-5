@@ -52,3 +52,4 @@ C:\Users\Olek\source\repos\zadanie5\zadanie5\obj\Debug\net6.0\refint\zadanie5.dl
 C:\Users\Olek\source\repos\zadanie5\zadanie5\obj\Debug\net6.0\zadanie5.pdb
 C:\Users\Olek\source\repos\zadanie5\zadanie5\obj\Debug\net6.0\zadanie5.genruntimeconfig.cache
 C:\Users\Olek\source\repos\zadanie5\zadanie5\obj\Debug\net6.0\ref\zadanie5.dll
+C:\Users\Olek\source\repos\zadanie5\zadanie5\obj\Debug\net6.0\zadanie5.sourcelink.json

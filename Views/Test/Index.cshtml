@@ -4,6 +4,7 @@
 <a href="@Url.Action("Create", "Test")" class="btn btn-primary">
     Dodaj klienta
 </a> 
+
 <table>
     <tr>
         <th>Id</th>
@@ -21,6 +22,16 @@
             <td>@klient.PESEL</td>
             <td>@klient.BirthYear</td>
             <td>@klient.Płeć</td>
+
+            <td>
+                <a  href="@Url.Action("Delete", "Test", new { id = klient.Id })">
+                    Usuń
+                </a>
+            </td>
         </tr>
     }
+
+
+
+
 </table>
