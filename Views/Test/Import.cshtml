@@ -1,0 +1,8 @@
+﻿<form asp-action="Import" asp-controller="Test" method="post" enctype="multipart/form-data">
+    <label for="File">
+        Wybierz plik
+    </label>
+    <input type="file" id="File" name="File" required accept=".csv,.xlsx" />
+
+    <button type="submit">impoertuj</button>
+</form>

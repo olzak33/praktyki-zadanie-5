@@ -5,6 +5,12 @@
     Dodaj klienta
 </a> 
 
+<a href="@Url.Action("Import", "Test")">
+    Import klientow z csv</a>
+
+<a class="btn btn-primary" href="@Url.Action("Export", "Test", new { type = 1 })">CSV</a>
+<a class="btn btn-primary" href="@Url.Action("Export", "Test", new { type = 2 })">XLSX</a>
+
 <table>
     <tr>
         <th>Id</th>
@@ -24,10 +30,19 @@
             <td>@klient.Płeć</td>
 
             <td>
+                <a href="@Url.Action("Edit", "Test", new { id = klient.Id })">
+                    Edytuj
+                </a>
+
+            </td>
+
+            <td>
                 <a  href="@Url.Action("Delete", "Test", new { id = klient.Id })">
                     Usuń
                 </a>
+
             </td>
+
         </tr>
     }
 
